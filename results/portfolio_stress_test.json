@@ -1,0 +1,106 @@
+{
+  "type": "synthetic_stress_test_not_real_asset_data",
+  "seeds": {
+    "train": 99123,
+    "test": 44109,
+    "deterministic": 601,
+    "risk_pso": 602,
+    "aco_pso": 603,
+    "paired_bootstrap": 20261120,
+    "feasibility_screen": 777
+  },
+  "training_scenarios": 180,
+  "heldout_test_scenarios": 5000,
+  "capital_budget_arbitrary_units": 100,
+  "mean_demand_arbitrary_units": 60,
+  "carbon_threshold_arbitrary_emission_units": 24,
+  "shortfall_event_definition": "unserved energy > 2% of scenario demand",
+  "results": [
+    {
+      "model": "Deterministic mean-state PSO",
+      "selected_technologies": [
+        "Legacy oil & gas + methane controls",
+        "LNG import/export diversification",
+        "Renewables + storage",
+        "Nuclear",
+        "Geothermal",
+        "Gas + carbon capture"
+      ],
+      "test": {
+        "mean_cost": 1496.2593558657911,
+        "mean_shortfall": 5.288719211396588,
+        "cvar95_shortfall": 26.694574117928838,
+        "shortfall_event_rate": 0.5312,
+        "mean_emissions": 6.308551502773924,
+        "carbon_violation_probability": 0
+      }
+    },
+    {
+      "model": "Risk-aware PSO",
+      "selected_technologies": [
+        "Legacy oil & gas + methane controls",
+        "LNG import/export diversification",
+        "Renewables + storage",
+        "Nuclear",
+        "Geothermal",
+        "Gas + carbon capture"
+      ],
+      "test": {
+        "mean_cost": 892.2017212104835,
+        "mean_shortfall": 2.2986452634279964,
+        "cvar95_shortfall": 23.83986177236668,
+        "shortfall_event_rate": 0.1488,
+        "mean_emissions": 20.60677378820043,
+        "carbon_violation_probability": 0.0002
+      }
+    },
+    {
+      "model": "ACO + adaptive PSO",
+      "selected_technologies": [
+        "Legacy oil & gas + methane controls",
+        "Gas + carbon capture",
+        "Nuclear"
+      ],
+      "test": {
+        "mean_cost": 890.9694545610329,
+        "mean_shortfall": 2.3050757674081526,
+        "cvar95_shortfall": 23.8063148374125,
+        "shortfall_event_rate": 0.1516,
+        "mean_emissions": 20.583253819510464,
+        "carbon_violation_probability": 0.0002
+      }
+    }
+  ],
+  "paired_hybrid_minus_pso_test_cost": {
+    "mean_difference": -1.23226664945054,
+    "conditional_scenario_bootstrap_95pct_ci": [
+      -2.3063921311682156,
+      -0.08599580430773067
+    ],
+    "share_test_scenarios_hybrid_cost_lower": 0.9212,
+    "shortfall_event_rate_difference_percentage_points": 0.28,
+    "warning": "Conditional on two fitted plans; does not include optimizer-seed uncertainty."
+  },
+  "random_feasibility_screen": {
+    "candidate_portfolios": 20000,
+    "test_scenarios": 1000,
+    "best_shortfall_event_rate": 0.125,
+    "best_capital_shares": [
+      78.05,
+      1.62,
+      0.54,
+      3.93,
+      9.51,
+      4.58
+    ],
+    "carbon_violation_probability_for_that_candidate": 0.865,
+    "meets_95pct_reliability": false,
+    "warning": "Random search is not proof of infeasibility."
+  },
+  "model_challenge": [
+    "The hybrid did not establish practical superiority over adaptive PSO.",
+    "Neither risk-aware plan met a 95% supply-reliability requirement.",
+    "Current penalties do not guarantee hard chance constraints.",
+    "A real study needs repeated seeds, compute-matched baselines and calibrated asset-level scenarios."
+  ]
+}
