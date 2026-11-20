@@ -1,0 +1,21 @@
+{
+  "opec_ASB_2026": {
+    "reserve_scope": "world proven crude oil reserves at end-2025",
+    "reserves_bn_barrels": 1572,
+    "world_crude_production_2025_mbpd": 74.85,
+    "calculated_static_R_over_P_years": 57.53973700826311
+  },
+  "eni_world_energy_review_2026": {
+    "reserve_scope": "reported proven oil reserves under Eni definitions",
+    "reserves_bn_barrels_lower_bound": 1790,
+    "production_2025_mbpd": 100.4,
+    "reported_R_over_P_years": 48.9
+  },
+  "decline_stress": {
+    "IEA_no_investment_annual_decline_assumption": 0.08,
+    "rounded_2025_baseline_mbpd": 100.4,
+    "horizon_years": 10,
+    "mechanical_2035_mbpd": 43.61260080405269
+  },
+  "interpretation": "Static R/P is not an exhaustion date. OPEC and Eni figures have different reserve/production scope. The no-investment decline result is an illustrative compound stress, not a forecast."
+}
