@@ -1,0 +1,55 @@
+{
+  "sample": {
+    "brent_monthly_observations": 474,
+    "brent_range_months": [
+      "1987-05",
+      "2026-10"
+    ],
+    "gpr_monthly_observations": 500,
+    "gpr_range_months": [
+      "1985-01",
+      "2026-08"
+    ],
+    "joined_months": 472,
+    "joined_range_months": [
+      "1987-05",
+      "2026-08"
+    ]
+  },
+  "target": "Monthly Brent log return",
+  "protocol": {
+    "forecast_horizon_months": 1,
+    "rolling_training_window_months": 120,
+    "out_of_sample_forecasts": 351,
+    "features_price_only": [
+      "intercept",
+      "lagged_monthly_log_return"
+    ],
+    "features_augmented": [
+      "intercept",
+      "lagged_monthly_log_return",
+      "log1p(prior_month_GPR)",
+      "one_month_change_in_log1p_GPR"
+    ],
+    "fit": "ridge-regularised linear regression",
+    "ridge_penalty": 0.05
+  },
+  "correlations": {
+    "same_month_GPR_level_vs_same_month_Brent_log_return": -0.010091669162338529,
+    "prior_month_GPR_level_vs_following_month_Brent_log_return": -0.08648994374206494
+  },
+  "price_only_AR1": {
+    "MAE_pct_log_return": 7.4868478167019274,
+    "RMSE_pct_log_return": 10.52554575872903,
+    "directional_accuracy_pct": 56.69515669515669,
+    "out_of_sample_R2": -0.02228235375617893
+  },
+  "AR1_plus_lagged_GPR": {
+    "MAE_pct_log_return": 7.723152335932235,
+    "RMSE_pct_log_return": 10.80522607172533,
+    "directional_accuracy_pct": 52.991452991452995,
+    "out_of_sample_R2": -0.07733143614644988
+  },
+  "interpretation": "Adding the aggregate lagged GPR level and change worsened all reported metrics in this pilot. This rejects the simplistic GPR-only augmentation hypothesis for this setup; it does not test asset-level disruption, volume loss, inventories or causal event pathways.",
+  "data_caveat": "GPR coverage ends August 2026 in the snapshot, even though the Brent snapshot runs through October 2026. Data vintages and release dates must be handled explicitly in final research."
+}
