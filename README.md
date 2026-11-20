@@ -2,9 +2,9 @@
 
 Research repository for the doctoral thesis:
 
-**Adopting Ant Algorithm Optimization and Adaptive Swarm Intelligence to Address Modern Optimization and Deep-Thinking Challenges Under Physical and Energy Constraints: Bridging the Probabilistic–Deterministic Mismatch**
+**A Physics-Constrained Probabilistic Ant–Swarm Optimization Framework for Oil and Gas Market Resilience, Resource Longevity, and Long-Term Energy Transition Planning**
 
-This repository operationalises three oil-and-gas (O&G) research use cases:
+The revised thesis blueprint and experimental roadmap are available in [docs/REVISED_THESIS_BLUEPRINT.md](docs/REVISED_THESIS_BLUEPRINT.md) and [docs/REVISED_EXPERIMENTAL_ROADMAP.md](docs/REVISED_EXPERIMENTAL_ROADMAP.md). The original research direction and preliminary experiments are retained as the foundation and audit trail.\n\nThis repository operationalises three oil-and-gas (O&G) research use cases:
 
 1. **Oil-price formation and forecasting:** explain benchmark and grade/location prices through granular geopolitical, supply, demand, macro-financial, logistics, crude-quality and policy drivers.
 2. **Resource longevity and production decline:** distinguish geological resources, technically recoverable resources, economically recoverable reserves, production capacity and market demand; estimate probabilistic production thresholds rather than a single “run-out” date.
@@ -37,7 +37,7 @@ The aggregate GPR feature **worsened** this preliminary test. This is evidence a
 
 A separate stylized energy-portfolio simulation is a synthetic stress test, not real plant data. It showed risk-aware search reduced shortage versus a deterministic mean-state plan, but the ACO–PSO hybrid did not materially outperform PSO and neither met the assumed reliability target. The result is deliberately retained as a model challenge.
 
-See [docs/RESEARCH_DESIGN.md](docs/RESEARCH_DESIGN.md), [docs/EMPIRICAL_FINDINGS.md](docs/EMPIRICAL_FINDINGS.md), and [data/README.md](data/README.md).
+See [docs/REVISED_THESIS_BLUEPRINT.md](docs/REVISED_THESIS_BLUEPRINT.md), [docs/REVISED_EXPERIMENTAL_ROADMAP.md](docs/REVISED_EXPERIMENTAL_ROADMAP.md), [docs/RESEARCH_DESIGN.md](docs/RESEARCH_DESIGN.md), [docs/EMPIRICAL_FINDINGS.md](docs/EMPIRICAL_FINDINGS.md), and [data/README.md](data/README.md).
 
 ## Quick start
 
